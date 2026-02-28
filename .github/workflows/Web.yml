@@ -50,16 +50,16 @@ jobs:
 
       - name: Build with dotnet
         run: |
-          dotnet build "Vehiculo.Web/Abstracciones/*.csproj" --configuration Release --no-restore
-          dotnet build "Vehiculo.Web/Reglas/*.csproj" --configuration Release --no-restore
-          dotnet build "Vehiculo.Web/Web/*.csproj" --configuration Release --no-restore
+          dotnet build "Vehiculo.Web/Abstracciones/Abstracciones.csproj" --configuration Release --no-restore
+          dotnet build "Vehiculo.Web/Reglas/Reglas.csproj" --configuration Release --no-restore
+          dotnet build "Vehiculo.Web/Web/Web.csproj" --configuration Release --no-restore
         
 
       - name: Run tests
         run: dotnet test "Vehiculo.Web/Vehiculo.Web.slnx" --no-restore --verbosity normal --configuration Release || echo "No tests found or test execution failed"
 
       - name: dotnet publish
-        run: dotnet publish "Vehiculo.Web/Web/*.csproj" -c Release -o ./publish --no-restore
+        run: dotnet publish "Vehiculo.Web/Web/Web.csproj" -c Release -o ./publish --no-restore
 
       - name: Upload artifact for deployment job
         uses: actions/upload-artifact@v4
