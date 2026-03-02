@@ -5,7 +5,7 @@ namespace Abstracciones.Modelos
     public class VehiculoBase
     {
         [Required(ErrorMessage = "La placa es requerida")]
-        [RegularExpression(@"^\d{3}-[A-Z]{3}$", ErrorMessage = "El formato de la placa debe ser ###-ABC")]
+        [RegularExpression(@"[A-Za-z]{3}-[0-9]{3}", ErrorMessage = "El formato de la placa debe ser ###-ABC")]
         public string Placa { get; set; }
 
         [Required(ErrorMessage = "El color es requerido")]
