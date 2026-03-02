@@ -29,6 +29,7 @@ on:
     branches: [ "main" ]
     paths-ignore:
       - 'Vehiculo.API/BD/**'
+      - 'Vehiculo.Web/**'
   workflow_dispatch:
 
 permissions:
